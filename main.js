@@ -126,7 +126,8 @@ async function main() {
         roughnessBlurScale: 16.0,
         resolutionScale: 0.5,
         attenuationDistance: 0.33,
-        attenuationColor: [0.9, 0.6, 0.3]
+        attenuationColor: [0.9, 0.6, 0.3],
+        moveLights: false
     }
     gui.add(effectController, "roughness", 0.0, 1.0, 0.01).onChange((value) => {
         translucentMesh.material.roughness = value;
@@ -152,19 +153,22 @@ async function main() {
     gui.addColor(effectController, "attenuationColor").onChange((value) => {
         translucentMesh.material.attenuationColor = new THREE.Color(value[0], value[1], value[2]);
     });
+    gui.add(effectController, "moveLights");
+
 
 
 
     function animate() {
         const delta = clock.getDelta();
-        // Rotate point lights:
-        /*for (let i = 0; i < lights.length; i++) {
-            const light = lights[i];
-            const mag = Math.max(Math.hypot(light.position.x, light.position.z), 5);
-            const angle = Math.atan2(light.position.z, light.position.x) + delta;
-            light.position.x = mag * Math.cos(angle);
-            light.position.z = mag * Math.sin(angle);
-        }*/
+        if (effectController.moveLights) {
+            for (let i = 0; i < lights.length; i++) {
+                const light = lights[i];
+                const mag = Math.max(Math.hypot(light.position.x, light.position.z), 5);
+                const angle = Math.atan2(light.position.z, light.position.x) + delta;
+                light.position.x = mag * Math.cos(angle);
+                light.position.z = mag * Math.sin(angle);
+            }
+        }
         renderer.render(scene, camera);
         controls.update();
         stats.update();
