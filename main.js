@@ -1,16 +1,16 @@
-import * as THREE from 'https://cdn.skypack.dev/three@0.150.0';
-import { EffectComposer } from 'https://unpkg.com/three@0.150.0/examples/jsm/postprocessing/EffectComposer.js';
-import { RenderPass } from 'https://unpkg.com/three@0.150.0/examples/jsm/postprocessing/RenderPass.js';
-import { ShaderPass } from 'https://unpkg.com/three@0.150.0/examples/jsm/postprocessing/ShaderPass.js';
-import { SMAAPass } from 'https://unpkg.com/three@0.150.0/examples/jsm/postprocessing/SMAAPass.js';
-import { GammaCorrectionShader } from 'https://unpkg.com/three@0.150.0/examples/jsm/shaders/GammaCorrectionShader.js';
+import * as THREE from 'https://cdn.skypack.dev/three@0.152.0';
+import { EffectComposer } from 'https://unpkg.com/three@0.152.0/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from 'https://unpkg.com/three@0.152.0/examples/jsm/postprocessing/RenderPass.js';
+import { ShaderPass } from 'https://unpkg.com/three@0.152.0/examples/jsm/postprocessing/ShaderPass.js';
+import { SMAAPass } from 'https://unpkg.com/three@0.152.0/examples/jsm/postprocessing/SMAAPass.js';
+import { GammaCorrectionShader } from 'https://unpkg.com/three@0.152.0/examples/jsm/shaders/GammaCorrectionShader.js';
 import { EffectShader } from "./EffectShader.js";
-import { OrbitControls } from 'https://unpkg.com/three@0.150.0/examples/jsm/controls/OrbitControls.js';
-import { OBJLoader } from "https://unpkg.com/three@0.150.0/examples/jsm/loaders/OBJLoader.js";
-import { GLTFLoader } from "https://unpkg.com/three@0.150.0/examples/jsm/loaders/GLTFLoader.js";
-import * as BufferGeometryUtils from "https://unpkg.com/three@0.150.0/examples/jsm/utils/BufferGeometryUtils.js";
-import { FullScreenQuad } from "https://unpkg.com/three@0.150.0/examples/jsm/postprocessing/Pass.js";
-import { GUI } from 'https://unpkg.com/three@0.150.0/examples/jsm/libs/lil-gui.module.min.js';
+import { OrbitControls } from 'https://unpkg.com/three@0.152.0/examples/jsm/controls/OrbitControls.js';
+import { OBJLoader } from "https://unpkg.com/three@0.152.0/examples/jsm/loaders/OBJLoader.js";
+import { GLTFLoader } from "https://unpkg.com/three@0.152.0/examples/jsm/loaders/GLTFLoader.js";
+import * as BufferGeometryUtils from "https://unpkg.com/three@0.152.0/examples/jsm/utils/BufferGeometryUtils.js";
+import { FullScreenQuad } from "https://unpkg.com/three@0.152.0/examples/jsm/postprocessing/Pass.js";
+import { GUI } from 'https://unpkg.com/three@0.152.0/examples/jsm/libs/lil-gui.module.min.js';
 import { AssetManager } from './AssetManager.js';
 import { MeshTranslucentMaterial } from './TranslucentMaterial.js';
 import { Stats } from "./stats.js";
@@ -59,7 +59,7 @@ async function main() {
     const ambientLight = new THREE.AmbientLight(new THREE.Color(1.0, 1.0, 1.0), 0.25);
     scene.add(ambientLight);
     const directionalLight = new THREE.DirectionalLight(0xffffff, 0.35);
-    directionalLight.position.set(150, 200, 50);
+    directionalLight.position.set(152, 200, 50);
     // Shadows
     directionalLight.castShadow = true;
     directionalLight.shadow.mapSize.width = 1024;

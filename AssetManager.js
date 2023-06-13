@@ -1,7 +1,7 @@
-import * as THREE from 'https://cdn.skypack.dev/three@0.150.0';
+import * as THREE from 'https://cdn.skypack.dev/three@0.152.0';
 import {
     GLTFLoader
-} from 'https://unpkg.com/three@0.150.0/examples/jsm/loaders/GLTFLoader.js';
+} from 'https://unpkg.com/three@0.152.0/examples/jsm/loaders/GLTFLoader.js';
 const AssetManager = {};
 AssetManager.gltfLoader = new GLTFLoader();
 AssetManager.audioLoader = new THREE.AudioLoader();
